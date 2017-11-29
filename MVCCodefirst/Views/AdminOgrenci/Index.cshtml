@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MVCCodefirst.Models.Ogrenci>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.AdSoyad)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DogumTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MezunMu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ortalama)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogumTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MezunMu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ortalama)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.OgrenciID })|
+            @Html.ActionLink("Details", "Details", new { id = item.OgrenciID })|
+            @Html.ActionLink("Delete", "Delete", new { id = item.OgrenciID })
+
+
+        </td>
+    </tr>
+    }
+
+
+</table>

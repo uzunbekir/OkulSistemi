@@ -1,0 +1,34 @@
+﻿@model MVCCodefirst.Models.Ders
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ders</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*listeleme yapar*@
+    <dt>
+        @Html.DisplayNameFor(model => model.DersAdi)
+        @*dt dediğimde tanım*@
+        @*displaynamefor dediğim propertydeki değeri okur. kullanıcının gördüğü*@
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.DersAdi)
+        @*displayfor label içine yazdırır.*@
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Aciklama)
+
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Aciklama)
+    </dd>
+</dl>
+</div>
+<p>
+    @Html.ActionLink("Edit","Edit",new { id=Model.DersID})|
+    @Html.ActionLink("Back to List","Index")
+</p>

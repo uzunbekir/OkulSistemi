@@ -1,0 +1,37 @@
+﻿@model MVCCodefirst.Models.Ders
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+<h3> Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Ders</h4>
+    <hr />
+    <dl class="dl-horizontal">@*listeleme yapar*@
+        <dt>
+            @Html.DisplayNameFor(model=>model.DersAdi)
+            @*dt dediğimde tanım*@
+            @*displaynamefor dediğim propertydeki değeri okur. kullanıcının gördüğü*@
+        </dt>
+    <dd>
+        @Html.DisplayFor(model=>model.DersAdi)
+        @*displayfor label içine yazdırır.*@
+    </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+           
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+            @Html.ActionLink("Back to list","Index")
+        </div>
+    }
+</div>
